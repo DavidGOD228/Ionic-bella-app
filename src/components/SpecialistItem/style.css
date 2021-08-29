@@ -1,0 +1,24 @@
+.specialist-available {
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 13px;
+
+    display: flex;
+    align-items: flex-end;
+    color: #A7A7AB;
+    margin-top: 8px;
+}
+
+.specialist-time-container {
+    padding: 5px 10px;
+    border: 1px solid #DADADA;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.specialist-time-active {
+    background: black;
+    color: white;
+}

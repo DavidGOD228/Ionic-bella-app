@@ -1,0 +1,38 @@
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-j-center {
+    display: flex;
+    justify-content: center;
+}
+.flex-a-center {
+    display: flex;
+    align-items: center;
+}
+
+ion-header {
+    background-color: black;
+}
+
+ion-toggle {
+    --background: #E5E5EA;
+}
+
+ion-back-button{
+    --color: white !important;
+}
+
+.header-ios ion-toolbar:last-of-type {
+    --border-width: 0
+}
+
+.width100 {
+    width: 100%;
+}

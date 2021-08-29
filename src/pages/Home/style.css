@@ -1,0 +1,64 @@
+.header-button {
+    --background: transparent;
+    --background-activated: transparent !important;
+    opacity: 0.5;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+.toggle-container {
+    height: 120px;
+    padding: 25px;
+}
+
+.toggle-title {
+    color: #A7A7AB
+}
+
+.active-toggle-title {
+    color: black;
+}
+
+.city-container {
+    background: #F5F5F7;
+    flex-wrap: wrap;
+    padding: 15px 25px 0;
+}
+
+.select-item {
+    padding: 8px;
+    margin-right: 8px;
+    margin-bottom: 15px;
+    background: white;
+    width: fit-content;
+    color: #A7A7AB;
+}
+
+.select-item-active {
+    background: black;
+    color: white;
+}
+
+.affiliates-container {
+}
+
+.affiliate {
+    padding: 15px 25px;
+    border-bottom: 1px solid #C1C1C4;
+}
+
+.time-text {
+    color: #C1C1C4;
+    font-size: 12px;
+}
+
+.text-margin {
+    margin: 5px 0
+}
+
+.header-about-info {
+    position: absolute;
+    background: white;
+    z-index: 10;
+    padding: 22px;
+}

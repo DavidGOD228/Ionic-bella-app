@@ -1,0 +1,45 @@
+
+.header-address {
+    --background: transparent !important;
+    --background-activated: transparent !important;
+    margin-top: 10px;
+    text-align: left
+}
+
+.visit-detail-container {
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.visit-detail-item-wrapper {
+    height: 58px;
+    width: 100%;
+    border: 1px solid #dedee0;
+    padding-right: 10px;
+}
+
+.visit-detail-label {
+    color: #A7A7AB;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.change-affiliate-button {
+    margin-top: 40px;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 24px;
+
+    display: inline-block;
+    align-items: flex-end;
+    color: #A7A7AB;
+
+    border-bottom: 1px dashed #E3E3E6;
+}

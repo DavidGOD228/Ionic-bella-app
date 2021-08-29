@@ -1,0 +1,16 @@
+.specialists-container {
+
+}
+
+.specialist-default {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #C1C1C4;
+    align-items: center;
+    padding: 20px;
+}
+
+.specialist-item {
+    height: auto;
+}
