@@ -35,7 +35,7 @@ export const VisitDetails = () => {
         <IonPage>
             <IonHeader style={{height: 140}}>
                 <IonToolbar>
-                    <IonButtons slot={'start'} style={{marginLeft: 10}}>
+                    <IonButtons slot={'start'} style={{marginLeft: 10}} >
                         <IonBackButton color={'medium-contrast'} text={''}/>
                     </IonButtons>
                 </IonToolbar>

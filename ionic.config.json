@@ -1,5 +1,7 @@
 {
   "name": "bella",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }

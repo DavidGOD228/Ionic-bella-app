@@ -40,7 +40,7 @@ export const Home = () => {
 
     return (
         <IonPage>
-            <IonHeader style={{height: 140}}>
+            <IonHeader style={{maxHeight: 180}}>
                 <IonToolbar>
                     <IonIcon src={Logo} font-size="80px"
                              style={{width: 80, height: 80, marginTop: 40, marginLeft: 34}}/>
