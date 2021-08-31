@@ -6,6 +6,7 @@ import {IAffiliates, ISpecialist} from "../../interfaces/interfaces";
 import {useHistory} from "react-router";
 import './style.css'
 import {getFormattedDate} from "../../helpers/functions";
+import ReactStars from "react-rating-stars-component";
 
 interface ISpecialistProps {
     specialist: ISpecialist
@@ -31,8 +32,21 @@ export const SpecialistItem = ({specialist}: ISpecialistProps) => {
                 <div style={{marginLeft: 16, justifyContent: 'space-between', width: '100%'}} className={'flex-row'}>
                     <div>
                         <div>{specialist.name}</div>
-                        {specialist.speciality.map((item) => <div style={{fontSize: '13px'}}>{item}</div>)}
+                        <div className={'flex-row'}>
+                        {specialist.speciality.map((item) => <div style={{fontSize: '13px'}}>&nbsp;{item}</div>)}
+                        </div>
+                        <ReactStars
+                            count={5}
+                            value={2}
+                            size={24}
+                            edit={false}
+                            emptyIcon={<i className="far fa-star"/>}
+                            halfIcon={<i className="fa fa-star-half-alt"/>}
+                            fullIcon={<i className="fa fa-star"/>}
+                            activeColor="#ffd700"
+                        />
                     </div>
+
                     <IonIcon src={informationCircleOutline} style={{color: '#DADADA', width: 22, height: 22}}/>
                 </div>
 
