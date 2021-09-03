@@ -115,10 +115,12 @@ export const VisitDetails = () => {
                     <div className={'visit-detail-item-wrapper flex-row flex-a-center'}
                          style={{justifyContent: 'space-between'}}>
                         <div className={'flex-row flex-a-center'} onClick={handleServices}>
-                            <IonIcon src={Checkbox} style={{width: 58, height: 58}}/>
+                            <IonIcon src={Checkbox} style={{width: 58,minWidth: 58, height: 58}}/>
                             <div style={{
                                 marginLeft: 24,
-                                color: store.service.savedService.length ? 'black' : '#A7A7AB'
+                                color: store.service.savedService.length ? 'black' : '#A7A7AB',
+                                height: 58,
+                                overflow: 'hidden'
                             }}>
                                 {store.service.savedService.length > 0 ? store.service.savedService.map((service, index) => service.title + (index !== visit.services.length - 1 ? ', ' : '')) : 'Выберите услугу'}
                             </div>
