@@ -63,22 +63,29 @@ export const SelectServices = (): JSX.Element => {
     }
     return(
         <IonPage style={{justifyContent: 'flex-start'}} className={'main-component'}>
-            <MainHeader title={'Выберите  Услугу'} onChange={(text) => searchServices(text)} searchText={headerSearchText} isShowSearch={isShowSearch} setIsShowSearch={(isShow) => setShowSearchText(isShow)}/>
+            <MainHeader title={'Выберите  Услугу'} onChange={(text) => searchServices(text)} serviceHeader={true} searchText={headerSearchText} isShowSearch={isShowSearch} setIsShowSearch={(isShow) => setShowSearchText(isShow)}/>
             {/*<IonInfiniteScroll>*/}
             <div className="scroll-wrapper" >
                 {!headerSearchText.length && (
                     <IonContent className="left-content" style={{flex:1, }}>
-                        {store.servicesCategory.map((service, index) => (
+                        {store.servicesCategory.map((service, index) => {
+                            const lengthOfSelectedService = selectedService.filter(el => el.category === service.category).length
+                            return(
                             <div className={'component-category'} key={service.id} onClick={() => onSelectCategory(service, index)}>
                                 <div className="left-side-image-wrapper">
                                     <img src={service.image} alt="" className={index !== categorySelect ? 'blackImage': ''} style={{width: 93, height: 93, alignSelf: 'center', objectFit: 'cover'}}/>
-                                    <div className="">
-                                        <span></span>
-                                    </div>
+                                    {lengthOfSelectedService ? (
+                                        <div className="left-side-image-length">
+                                            <span>{lengthOfSelectedService}</span>
+                                        </div>
+                                    ): (
+                                        <div></div>
+                                    )}
                                 </div>
                                 <span style={{color: '#000', textAlign: 'center', display: 'block', fontWeight: 500}}>{service.name}</span>
                             </div>
-                        ))}
+                        )}
+                        )}
                     </IonContent>
                 )}
                <IonContent className="service-container" style={{flex:2}}>

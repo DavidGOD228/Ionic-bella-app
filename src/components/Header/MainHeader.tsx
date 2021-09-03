@@ -10,9 +10,10 @@ interface Iprops{
     searchText: string
     isShowSearch: boolean
     setIsShowSearch: (isShow: boolean) => void
+    serviceHeader: boolean
 
 }
-export const MainHeader = ({title, onChange, isShowSearch, searchText, setIsShowSearch}: Iprops) => {
+export const MainHeader = ({title, onChange, isShowSearch, searchText, setIsShowSearch, serviceHeader}: Iprops) => {
     return(
         <IonHeader style={{height: 72}} className={'flex-row flex-center'}>
             <IonToolbar>

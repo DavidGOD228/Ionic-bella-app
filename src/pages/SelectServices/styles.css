@@ -1,5 +1,5 @@
 .component-category{
-    width: 100px;
+    width: 93px;
     margin:  10px;
     /*height: 100px;*/
     /*background-color: red;*/
@@ -99,4 +99,18 @@
 }
 .left-side-image-wrapper{
     position: relative;
+    width: 93px;
+    height: 93px;
+}
+.left-side-image-length{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #000000;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
