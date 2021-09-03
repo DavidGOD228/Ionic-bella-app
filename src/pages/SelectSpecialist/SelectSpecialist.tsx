@@ -65,7 +65,7 @@ export const SelectSpecialist = () => {
                     <IonIcon style={{color: '#C1C1C4'}} src={chevronForward}
                              onClick={() => setIsShowSearch(!isShowSearch)}/>
                 </div>
-                {specialists.map((specialist) => <div className={'specialist-default specialist-item'}>
+                {specialists.map((specialist) => <div className={'specialist-default specialist-item'} key={specialist.id}>
                     <SpecialistItem specialist={specialist}/>
                 </div>)}
             </div>

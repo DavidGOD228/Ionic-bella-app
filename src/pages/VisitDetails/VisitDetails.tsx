@@ -4,20 +4,27 @@ import Logo from "../../assets/icon/logo.svg";
 import Users from "../../assets/icon/users.svg";
 import Checkbox from "../../assets/icon/bgCheckbox.svg";
 import Calendar from "../../assets/icon/bgCalendar.svg";
-import {chevronDown, chevronForward} from "ionicons/icons";
+import {chevronDown, chevronForward, closeOutline} from "ionicons/icons";
+import {useSelector, useDispatch} from 'react-redux'
 import {IAffiliates} from "../../interfaces/interfaces";
 import './style.css'
 import {useHistory, useLocation} from "react-router";
+import {IRootReducer} from "../../redux/rootReducer";
+import {deleteService, deleteDate} from '../../redux/services/actions'
+import {deleteSpecialist} from '../../redux/specialists/actions'
+import moment from "moment";
 
 interface IVisitDetailsProps {
     affiliate: IAffiliates
 }
 
 export const VisitDetails = () => {
+    const store = useSelector((state: IRootReducer) => state)
+    const dispatch = useDispatch()
     const [visit, setVisit] = useState({
         specialist: '',
-        services: [],
-        date: ''
+        services: store.service.savedService,
+        date: store.service.savedTime
     })
     const location = useLocation();
     const history = useHistory()
@@ -30,6 +37,36 @@ export const VisitDetails = () => {
 
     const handleSpecialist = () => {
         history.push('/selectSpecialist')
+    }
+    const handleServices = () => {
+        history.push('/services')
+    }
+    const handleDate = () => {
+        history.push('/selectDate')
+    }
+    const handleDeleteService = () => {
+        if(store.service.savedService.length) {
+            dispatch(deleteService())
+        }else{
+            handleServices()
+        }
+
+    }
+    const handleDeleteDate = () => {
+        if(store.service.savedTime){
+            dispatch(deleteDate())
+        }else{
+            handleDate()
+        }
+
+    }
+    const handleDeleteSpecialist = () => {
+        if(store.specialistsList.savedSpecialist){
+            dispatch(deleteSpecialist())
+        }else{
+            handleSpecialist()
+        }
+
     }
     return (
         <IonPage>
@@ -61,48 +98,49 @@ export const VisitDetails = () => {
                     <h3>Детали визита</h3>
                     <label className={'visit-detail-label'}>Специалист</label>
                     <div className={'visit-detail-item-wrapper flex-row flex-a-center'}
-                         onClick={handleSpecialist}
                          style={{justifyContent: 'space-between'}}>
-                        <div className={'flex-row flex-a-center'}>
+                        <div className={'flex-row flex-a-center'}   onClick={handleSpecialist}>
                             <IonIcon src={Users} style={{width: 58, height: 58}}/>
                             <div style={{
                                 marginLeft: 24,
-                                color: visit.specialist ? 'black' : '#A7A7AB'
-                            }}>{`${visit.specialist ? visit.specialist : 'Выберите специалиста'}`}</div>
+                                color: store.specialistsList.savedSpecialist ? 'black' : '#A7A7AB'
+                            }}>{`${store.specialistsList.savedSpecialist ? store.specialistsList.savedSpecialist.name : 'Выберите специалиста'}`}</div>
                         </div>
-                        <IonIcon src={chevronForward} style={{color: 'grey', marginLeft: 5}}/>
+                        <IonIcon src={store.specialistsList.savedSpecialist  ? closeOutline: chevronForward} style={{color: 'grey', marginRight: -10, padding: 10}} onClick={handleDeleteSpecialist}/>
                     </div>
 
                     <br/>
                     <label className={'visit-detail-label'}>Услуга</label>
+                    <br/>
                     <div className={'visit-detail-item-wrapper flex-row flex-a-center'}
                          style={{justifyContent: 'space-between'}}>
-                        <div className={'flex-row flex-a-center'}>
+                        <div className={'flex-row flex-a-center'} onClick={handleServices}>
                             <IonIcon src={Checkbox} style={{width: 58, height: 58}}/>
                             <div style={{
                                 marginLeft: 24,
-                                color: visit.services.length ? 'black' : '#A7A7AB'
+                                color: store.service.savedService.length ? 'black' : '#A7A7AB'
                             }}>
-                                {visit.services.length > 0 ? visit.services.map((service) => service) : 'Выберите услугу'}
+                                {store.service.savedService.length > 0 ? store.service.savedService.map((service, index) => service.title + (index !== visit.services.length - 1 ? ', ' : '')) : 'Выберите услугу'}
                             </div>
                         </div>
-                        <IonIcon src={chevronForward} style={{color: 'grey', marginLeft: 5}}/>
+                        <IonIcon src={store.service.savedService.length ? closeOutline: chevronForward} style={{color: 'grey', marginRight: -10, padding: 10}} onClick={handleDeleteService}/>
                     </div>
 
                     <br/>
                     <label className={'visit-detail-label'}>Дата и время</label>
                     <div className={'visit-detail-item-wrapper flex-row flex-a-center'}
                          style={{justifyContent: 'space-between'}}>
-                        <div className={'flex-row flex-a-center'}>
+                        <div className={'flex-row flex-a-center'} onClick={handleDate}>
                             <IonIcon src={Calendar} style={{width: 58, height: 58}}/>
                             <div style={{
                                 marginLeft: 24,
-                                color: visit.date ? 'black' : '#A7A7AB'
+                                color: store.service.savedTime ? 'black' : '#A7A7AB'
                             }}>
-                                {visit.date ? visit.date : 'Выберите дату и время'}
+                                {store.service.savedTime ? moment(store.service.savedTime).format('DD MMMM YYYY [в] HH:mm') : 'Выберите дату и время'}
                             </div>
                         </div>
-                        <IonIcon src={chevronForward} style={{color: 'grey', marginLeft: 5}}/>
+                            <IonIcon src={store.service.savedTime ? closeOutline: chevronForward} style={{color: 'grey', marginRight: -10, padding: 10}} onClick={handleDeleteDate}/>
+
                     </div>
                     <div className={'change-affiliate-button'} onClick={handleBack}>
                         Сменить филиал

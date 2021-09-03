@@ -4,6 +4,9 @@ import {IonRouterOutlet} from "@ionic/react";
 import React from "react";
 import {VisitDetails} from "../pages/VisitDetails/VisitDetails";
 import {SelectSpecialist} from "../pages/SelectSpecialist/SelectSpecialist";
+import {SelectServices} from '../pages/SelectServices/SelectServices'
+import {SelectDate} from '../pages/SelectDate/SelectDate'
+import {SpecialistDetail} from '../pages/SpecialistDetail/SpecialistDetail'
 
 
 export const Routers = () => {
@@ -11,6 +14,8 @@ export const Routers = () => {
         <Switch>
             <Route exact path="/home">
                 <Home/>
+
+
             </Route>
             <Route exact path="/tab2">
                 <Home/>
@@ -18,8 +23,11 @@ export const Routers = () => {
             <Route exact path="/">
                 <Redirect to="/home"/>
             </Route>
+            <Route path="/services" component={SelectServices}/>
             <Route exact path="/visitDetail" component={VisitDetails}/>
+            <Route exact path="/selectDate" component={SelectDate}/>
             <Route exact path="/selectSpecialist" component={SelectSpecialist}/>
+            <Route exact path="/specialistDetail" component={SpecialistDetail}/>
         </Switch>
     )
 }

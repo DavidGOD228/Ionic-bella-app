@@ -6,6 +6,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "ios": "ionic capacitor build ios -l",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -34,6 +35,8 @@
     "ionicons": "^5.4.0",
     "moment": "^2.29.1",
     "react": "^17.0.1",
+    "react-calendar": "^3.4.0",
+    "react-day-picker": "^7.4.10",
     "react-dom": "^17.0.1",
     "react-rating-stars-component": "^2.2.0",
     "react-redux": "^7.2.4",

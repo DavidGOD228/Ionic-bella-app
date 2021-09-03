@@ -1,5 +1,5 @@
 import {
-    IonApp,
+    IonApp, IonRouterOutlet,
 } from '@ionic/react';
 import {IonReactRouter} from '@ionic/react-router';
 import React from "react";
@@ -30,15 +30,19 @@ import 'moment/locale/ru';
 import {Routers} from "./routers/routers";
 moment.locale('ru');
 
-const App: React.FC = () => (
+const App: React.FC = () => {
+    return(
     <IonApp>
         <Provider store={store}>
             <IonReactRouter>
-                <Routers/>
-                <BottomBar/>
+                <IonRouterOutlet>
+                    <Routers/>
+
+                </IonRouterOutlet>
             </IonReactRouter>
         </Provider>
     </IonApp>
-);
+    )
+};
 
 export default App;

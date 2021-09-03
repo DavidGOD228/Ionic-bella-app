@@ -25,3 +25,23 @@ export interface IComment {
     rating: number
     addedBy: string
 }
+
+export interface IServiceCategory{
+    id: number;
+    image: string
+    name: string
+    category: string
+}
+
+export interface IService{
+    id: number,
+    image: string,
+    title: string,
+    price: number,
+    duration: number,
+    category: string
+}
+export interface IDates{
+    title: string
+    dates: string[]
+}

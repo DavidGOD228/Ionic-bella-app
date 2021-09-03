@@ -7,6 +7,10 @@ import {useHistory} from "react-router";
 import './style.css'
 import {getFormattedDate} from "../../helpers/functions";
 import ReactStars from "react-rating-stars-component";
+import {useDispatch, useSelector} from 'react-redux'
+import {saveDate} from '../../redux/services/actions'
+import {saveSpecialists} from '../../redux/specialists/actions'
+import moment from "moment";
 
 interface ISpecialistProps {
     specialist: ISpecialist
@@ -14,6 +18,8 @@ interface ISpecialistProps {
 
 export const SpecialistItem = ({specialist}: ISpecialistProps) => {
     const [currentTime, setCurrentTime] = useState(new Date())
+    const dispatch = useDispatch()
+    const history = useHistory()
 
     const handleSelectTime = (time: Date) => {
         if (currentTime === time) {
@@ -22,10 +28,19 @@ export const SpecialistItem = ({specialist}: ISpecialistProps) => {
         else {
             setCurrentTime(time)
         }
+        dispatch(saveSpecialists(specialist))
+        const date =  moment(time, 'HH:mm').format('')
+        dispatch(saveDate(date))
+        history.goBack()
+    }
+    const handleDetail = () => {
+        history.push('specialistDetail', {
+            specialist
+        })
     }
     return (
         <div className={'width100'}>
-            <div className={'flex-row width100'}>
+            <div className={'flex-row width100'} onClick={handleDetail}>
                 <IonAvatar>
                     <img src={specialist?.image ? specialist.image : DefaultImage} alt={'user-avatar'}/>
                 </IonAvatar>

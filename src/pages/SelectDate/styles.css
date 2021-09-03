@@ -1,0 +1,43 @@
+.component{
+    align-items: center;
+    color: #000;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: #F5F5F7
+}
+.dates-container{
+    align-self: center;
+    margin: 0 15px;
+}
+.dates-wrapper{
+    display: flex;
+    margin: 10px 0
+}
+.date-item{
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #cccccc;
+    font-weight: 500;
+    font-size: 15px;
+}
+.date-item:active{
+    background-color: #000000;
+    color: #ffffff;
+}
+.month-modal{
+    position: absolute;
+    top: 72px;
+    right: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    -webkit-box-shadow: -1px 1px 5px 2px rgba(0,0,0,0.31);
+    box-shadow: -1px 1px 5px 2px rgba(0,0,0,0.31);
+}
+
+.dates-container-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
