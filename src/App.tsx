@@ -1,8 +1,8 @@
 import {
-    IonApp, IonRouterOutlet,
+  IonApp, IonRouterOutlet,
 } from '@ionic/react';
-import {IonReactRouter} from '@ionic/react-router';
-import React from "react";
+import { IonReactRouter } from '@ionic/react-router';
+import React from 'react';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -19,30 +19,31 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
-import './app.css'
+import './app.css';
+
 /* Theme variables */
 import './theme/variables.css';
-import {BottomBar} from "./components/BottomBar/BottomBar";
-import {Provider} from "react-redux";
-import {store} from "./redux/store";
+import { BottomBar } from './components/BottomBar/BottomBar';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 import moment from 'moment';
 import 'moment/locale/ru';
-import {Routers} from "./routers/routers";
+import { Routers } from './routers/routers';
 moment.locale('ru');
 
 const App: React.FC = () => {
-    return(
+  return (
     <IonApp>
-        <Provider store={store}>
-            <IonReactRouter>
-                <IonRouterOutlet>
-                    <Routers/>
-
-                </IonRouterOutlet>
-            </IonReactRouter>
-        </Provider>
+      <Provider store={store}>
+        <IonReactRouter>
+          <IonRouterOutlet>
+            <Routers/>
+            <BottomBar/>
+          </IonRouterOutlet>
+        </IonReactRouter>
+      </Provider>
     </IonApp>
-    )
+  );
 };
 
 export default App;
