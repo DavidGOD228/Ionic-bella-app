@@ -9,39 +9,38 @@
     background-color: #F5F5F7
 }
 
-.wrapperChekout {
+.wrapper-chekout {
     margin: 74px 24px 0 24px;
 }
 
-.inputChekout {
+.input-chekout {
     background: rgba(237, 237, 240, 0.4);
 }
 
-.checkboxText {
+.checkbox-text {
     color: rgb(167, 167, 171);
 }
 
-.footerBtn {
+.footer-btn {
     width: 100%;
     display: flex;
     position: absolute;
     bottom: 0;
 }
 
-.footerItemBtn {
-    width: 50%;
+.footer-item-btn-right {
     height: 80px;
-}
-
-.footerItemBtnRight {
-    font-size: 18px;
+    width: 55%;
+    font-size: 16px;
     color: rgb(167, 167, 171);
     --background: white;
     --border-color: none !important;
 }
 
-.footerItemBtnLeft {
-    font-size: 18px;
+.footer-item-btn-left {
+    height: 80px;
+    width: 45%;
+    font-size: 16px;
     color: white;
     --background: black;
 }
