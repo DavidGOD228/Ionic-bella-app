@@ -8,6 +8,7 @@ import {SelectServices} from '../pages/SelectServices/SelectServices'
 import {SelectDate} from '../pages/SelectDate/SelectDate'
 import {SpecialistDetail} from '../pages/SpecialistDetail/SpecialistDetail'
 import {Chekout} from '../pages/Chekout/Chekout'
+import {Verification} from '../pages/Verification/Verification'
 
 
 export const Routers = () => {
@@ -30,6 +31,7 @@ export const Routers = () => {
             <Route exact path="/selectSpecialist" component={SelectSpecialist}/>
             <Route exact path="/specialistDetail" component={SpecialistDetail}/>
             <Route exact path="/chekout" component={Chekout}/>
+            <Route exact path="/verification" component={Verification}/>
         </Switch>
     )
 }

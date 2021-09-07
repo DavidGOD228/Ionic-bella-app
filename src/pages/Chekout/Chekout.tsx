@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {useHistory} from "react-router";
 import user from '../../assets/icon/user_w.svg'
 import pencil from '../../assets/icon/pencil.svg'
 import './style.css'
@@ -10,13 +11,19 @@ export const Chekout = (): JSX.Element => {
     const [comment, setСomment] = useState('')
     const [isChecked, setChecked] = useState(false)
 
+    const history = useHistory()
+
+    const onRegistration = () => {
+        history.push('/verification')
+    }
+
     return (
         <div className={"component"}>
             <IonHeader style={{height: 72}} className={'flex-row flex-center'}>
                 <IonToolbar>
                     <IonButtons style={{marginLeft: 10, justifyContent: 'space-between', paddingRight: 20}}>
                         <div className={'flex-row flex-center'}>
-    ≈                       <div style={{color: 'white', paddingLeft: 20}}>{'Подтверждение записи'}</div>
+    ≈                       <div style={{color: 'white', paddingLeft: 20}}>Подтверждение записи</div>
                         </div>
                     </IonButtons>
                 </IonToolbar>
@@ -38,7 +45,7 @@ export const Chekout = (): JSX.Element => {
                     <div className={'checkbox-text'}>Я принимаю условия пользовательского соглашения</div>
                     <IonCheckbox checked={isChecked} onIonChange={e => setChecked(e.detail.checked)} slot="start" color="dark"/>
                 </IonItem>
-                <IonButton disabled={!isChecked} size="large" expand="block" color="dark" style={{marginTop: '30px'}}>Подтвердить</IonButton>
+                <IonButton onClick={() => onRegistration()} disabled={!isChecked} size="large" expand="block" color="dark" style={{marginTop: '30px'}}>Подтвердить</IonButton>
             </div>
             <div className={'footer-btn'}>
                 <IonButton className={'footer-item-btn-left'} size="large" expand="block">
