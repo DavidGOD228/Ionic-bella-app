@@ -1,0 +1,43 @@
+.component {
+    align-items: center;
+    color: #000;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #F5F5F7
+}
+
+.wrapper-verification {
+    margin: 74px 24px 0 24px;
+}
+
+.footer-btn {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-item-btn-right {
+    height: 80px;
+    width: 55%;
+    font-size: 16px;
+    color: rgb(167, 167, 171);
+    --background: white;
+    --border-color: none !important;
+}
+
+.footer-item-btn-left {
+    height: 80px;
+    width: 45%;
+    font-size: 16px;
+    color: white;
+    --background: black;
+}
+
+
+
+
+

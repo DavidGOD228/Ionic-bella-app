@@ -1,11 +1,18 @@
 import React, {useState} from 'react'
+import {useHistory} from "react-router";
 import user from '../../assets/icon/user_w.svg'
 import pencil from '../../assets/icon/pencil.svg'
 import './style.css'
-import {IonRow, IonCol, IonGrid, IonIcon, IonButtons, IonButton, IonHeader, IonToolbar, IonItem, IonInput, IonLabel, IonCheckbox,} from "@ionic/react";
+import {IonIcon, IonButtons, IonButton, IonHeader, IonToolbar, IonItem, IonInput, IonLabel} from "@ionic/react";
 
 export const Verification = (): JSX.Element => {
     const [code, setCode] = useState('')
+
+    const history = useHistory()
+
+    const onVerification = () => {
+        history.push('/successful')
+    }
 
     return (
         <div className={"component"}>
@@ -20,10 +27,10 @@ export const Verification = (): JSX.Element => {
             </IonHeader>
             <div className={'wrapper-verification'}>
                 <IonItem lines="none" color='light' style={{with: '100%', height: '54px',}}>
-                    <IonLabel style={{color: 'rgba(167, 167, 171, 1)'}} position="floating">Номер телефона*</IonLabel>
+                    <IonLabel style={{color: 'rgba(167, 167, 171, 1)'}} position="floating">Code</IonLabel>
                     <IonInput value={code} onIonChange={e => setCode(e.detail.value!)}></IonInput>
                 </IonItem>
-                <IonButton disabled={false} size="large" expand="block" color="dark" style={{marginTop: '74px'}}>Отправить</IonButton>
+                <IonButton onClick={() => onVerification()} disabled={false} size="large" expand="block" color="dark" style={{marginTop: '74px'}}>Отправить</IonButton>
             </div>
             <div className={'footer-btn'}>
                 <IonButton className={'footer-item-btn-left'} size="large" expand="block">

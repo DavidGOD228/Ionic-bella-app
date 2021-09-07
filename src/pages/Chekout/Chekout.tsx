@@ -8,7 +8,7 @@ import {IonIcon, IonButtons, IonButton, IonHeader, IonToolbar, IonItem, IonInput
 export const Chekout = (): JSX.Element => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
-    const [comment, setСomment] = useState('')
+    const [comment, setComment] = useState('')
     const [isChecked, setChecked] = useState(false)
 
     const history = useHistory()
@@ -39,7 +39,7 @@ export const Chekout = (): JSX.Element => {
                 </IonItem>
                 <IonItem lines="none" color='white' style={{with: '100%', marginTop: '16px', height: '64px'}}>
                     <IonLabel style={{color: 'rgba(167, 167, 171, 1)'}} position="stacked">+Добавить комментарий</IonLabel>
-                    <IonInput style={{height: '100px'}} value={comment} onIonChange={e => setСomment(e.detail.value!)}> </IonInput>
+                    <IonInput style={{height: '100px'}} value={comment} onIonChange={e => setComment(e.detail.value!)}> </IonInput>
                 </IonItem>
                 <IonItem lines="none" style={{with: '100%', marginTop: '20px', color: 'light'}}>
                     <div className={'checkbox-text'}>Я принимаю условия пользовательского соглашения</div>
