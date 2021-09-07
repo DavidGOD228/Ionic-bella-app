@@ -1,0 +1,22 @@
+.component{
+    align-items: center;
+    color: #000;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: #F5F5F7
+}
+
+.wrapperChekout{
+    margin: 74px 24px 0 24px;
+}
+
+.inputChekout{
+    background: rgba(237, 237, 240, 0.4);
+}
+
+
+
+
+

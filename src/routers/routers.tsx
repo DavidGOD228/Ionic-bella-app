@@ -7,6 +7,7 @@ import {SelectSpecialist} from "../pages/SelectSpecialist/SelectSpecialist";
 import {SelectServices} from '../pages/SelectServices/SelectServices'
 import {SelectDate} from '../pages/SelectDate/SelectDate'
 import {SpecialistDetail} from '../pages/SpecialistDetail/SpecialistDetail'
+import {Chekout} from '../pages/Chekout/Chekout'
 
 
 export const Routers = () => {
@@ -28,6 +29,7 @@ export const Routers = () => {
             <Route exact path="/selectDate" component={SelectDate}/>
             <Route exact path="/selectSpecialist" component={SelectSpecialist}/>
             <Route exact path="/specialistDetail" component={SpecialistDetail}/>
+            <Route exact path="/chekout" component={Chekout}/>
         </Switch>
     )
 }
