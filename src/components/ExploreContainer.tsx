@@ -2,7 +2,7 @@ import './ExploreContainer.css';
 
 interface ContainerProps {
   name: string;
-  children: any
+  children: any;
 }
 
 const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
