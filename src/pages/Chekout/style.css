@@ -1,19 +1,49 @@
-.component{
+.component {
     align-items: center;
     color: #000;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     justify-content: center;
     background-color: #F5F5F7
 }
 
-.wrapperChekout{
+.wrapperChekout {
     margin: 74px 24px 0 24px;
 }
 
-.inputChekout{
+.inputChekout {
     background: rgba(237, 237, 240, 0.4);
+}
+
+.checkboxText {
+    color: rgb(167, 167, 171);
+}
+
+.footerBtn {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.footerItemBtn {
+    width: 50%;
+    height: 80px;
+}
+
+.footerItemBtnRight {
+    font-size: 18px;
+    color: rgb(167, 167, 171);
+    --background: white;
+    --border-color: none !important;
+}
+
+.footerItemBtnLeft {
+    font-size: 18px;
+    color: white;
+    --background: black;
 }
 
 

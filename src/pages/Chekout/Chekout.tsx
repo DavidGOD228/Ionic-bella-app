@@ -9,7 +9,7 @@ import {saveDate} from '../../redux/services/actions'
 import {MainHeader} from "../../components/Header/MainHeader";
 import {IRootReducer} from "../../redux/rootReducer";
 import {useHistory} from "react-router";
-import {IonBackButton, IonButtons, IonHeader, IonIcon, IonSearchbar, IonToolbar, IonItemDivider, IonItem, IonInput, IonLabel, IonCheckbox} from "@ionic/react";
+import {IonBackButton, IonButtons, IonButton, IonHeader, IonIcon, IonSearchbar, IonToolbar, IonItemDivider, IonItem, IonInput, IonLabel, IonCheckbox,} from "@ionic/react";
 import Search from "../../assets/icon/search.svg";
 import { relative } from 'path';
 import { NONAME } from 'dns';
@@ -18,16 +18,12 @@ import { NONAME } from 'dns';
 
 export const Chekout = (): JSX.Element => {
     const [isShowModal, setShowModal] = useState(false)
-    const [name, setName] = useState<string>()
-    const [phone, setPhone] = useState<number>()
-    const [comment, setСomment] = useState<number>()
+    const [name, setName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [comment, setСomment] = useState('')
     const [checked, setChecked] = useState(false);
 
-    const dispatch = useDispatch()
-    const history = useHistory()
-    const store = useSelector((store: IRootReducer) => store.service)
-    const modifiers = {
-    };
+
     
     return (
         <div className={"component"}>
@@ -53,9 +49,21 @@ export const Chekout = (): JSX.Element => {
                     <IonLabel style={{color: 'rgba(167, 167, 171, 1)'}} position="stacked">+Добавить комментарий</IonLabel>
                     <IonInput style={{height: '100px'}} value={comment}> </IonInput>
                 </IonItem>
-                <IonItem lines="none" style={{with: '100%', marginTop: '64px'}}>
+                <IonItem lines="none" style={{with: '100%', marginTop: '20px', color: 'light'}}>
+                    <div className={'checkboxText'}>Я принимаю условия пользовательского соглашения</div>
                     <IonCheckbox checked={checked} slot="start" color="dark"/>
                 </IonItem>
+                <IonButton size="large" expand="block" color="dark" style={{marginTop: '30px'}}>Подтвердить</IonButton>
+            </div>
+            <div className={'footerBtn'}>
+                <IonButton className={'footerItemBtn footerItemBtnLeft'} size="large" expand="block">
+                {/* <IonIcon slot="start" icon={}/> */}
+                    Запись
+                </IonButton>
+                <IonButton className={'footerItemBtn footerItemBtnRight'} size="large" expand="block">
+                {/* <IonIcon slot="start" icon={}/> */}
+                    Личный кабинет
+                </IonButton>
             </div>
         </div>
     )
