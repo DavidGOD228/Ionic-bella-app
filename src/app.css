@@ -41,3 +41,14 @@ ion-toolbar {
 .width100 {
     width: 100%;
 }
+
+.ion-color-light {
+    --ion-color-base: #f4f5f8 !important;
+}
+
+::slotted(ion-label) {
+    margin-left: unset;
+    margin-right: unset;
+    margin-inline: 0px 8px;
+    margin-top: 0;
+}
