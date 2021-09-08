@@ -20,7 +20,7 @@ export const BottomBar = () => {
 
           <IonLabel style={{ fontSize: 15 }}>Запись</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="user" href="/user" className={`flex-row flex-center ${pathname === '/user' ? 'active-tab' : ''}`}>
+        <IonTabButton tab="user" href="/userRegistration" className={`flex-row flex-center ${pathname === '/user' ? 'active-tab' : ''}`}>
           <IonIcon src={User} font-size="14px" style={{ width: 14, marginRight: 10 }}/>
           <IonLabel style={{ fontSize: 15 }}>Личный кабинет</IonLabel>
         </IonTabButton>

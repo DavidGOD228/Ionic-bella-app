@@ -12,6 +12,9 @@ module.exports = {
     },
     plugins: ['@ionic'],
     extends: ['plugin:@ionic/recommended'], // or use `plugin:@ionic/strict`
+    rules:{
+        "linebreak-style": 0
+    },
     globals: {
         React: true,
         google: true,

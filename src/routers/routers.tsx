@@ -6,26 +6,26 @@ import { SelectSpecialist } from '../pages/SelectSpecialist/SelectSpecialist';
 import { SelectServices } from '../pages/SelectServices/SelectServices';
 import { SelectDate } from '../pages/SelectDate/SelectDate';
 import { SpecialistDetail } from '../pages/SpecialistDetail/SpecialistDetail';
-import { User } from '../pages/User/User';
+import { UserRegistration } from '../pages/UserRegistration/UserRegistration';
 import { Checkout } from '../pages/Chekout/Chekout';
 import { Verification } from '../pages/Verification/Verification';
+import { User } from '../pages/User/User';
 
 export const Routers = () => {
   return (
     <Switch>
       <Route exact path="/home">
         <Home/>
-
-
       </Route>
-      <Route exact path="/user">
-        <User/>
+      <Route exact path="/userRegistration">
+        <UserRegistration/>
       </Route>
       <Route exact path="/">
         <Redirect to="/home"/>
       </Route>
       <Route path="/services" component={SelectServices}/>
       <Route exact path="/visitDetail" component={VisitDetails}/>
+      <Route exact path="/user" component={User}/>
       <Route exact path="/selectDate" component={SelectDate}/>
       <Route exact path="/selectSpecialist" component={SelectSpecialist}/>
       <Route exact path="/specialistDetail" component={SpecialistDetail}/>
