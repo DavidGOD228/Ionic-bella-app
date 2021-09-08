@@ -33,7 +33,7 @@ export const SelectDate = (): JSX.Element => {
     const hour = moment(time, 'HH:mm').format('HH');
     const minute = moment(time, 'HH:mm').format('mm');
     const date =  moment(selectedDate).set({ 'hour': Number(hour), minute: Number(minute) }).format('');
-    history.goBack();
+    history.push('/checkout');
     dispatch(saveDate(date));
   };
 

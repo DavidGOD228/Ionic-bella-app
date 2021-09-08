@@ -13,7 +13,7 @@ export const Verification = (): JSX.Element => {
         <IonToolbar>
           <IonButtons style={{ marginLeft: 10, justifyContent: 'space-between', paddingRight: 20 }}>
             <div className={'flex-row flex-center'}>
-    ≈                       <div style={{ color: 'white', paddingLeft: 20 }}>Введите код из sms</div>
+              ≈                       <div style={{ color: 'white', paddingLeft: 20 }}>Введите код из sms</div>
             </div>
           </IonButtons>
         </IonToolbar>
@@ -27,12 +27,12 @@ export const Verification = (): JSX.Element => {
       </div>
       <div className={'footer-btn'}>
         <IonButton className={'footer-item-btn-left'} size="large" expand="block">
-          <IonIcon slot="start" icon={pencil}/>
-                    Запись
+          <IonIcon slot="start" icon={pencil} />
+          Запись
         </IonButton>
         <IonButton className={'footer-item-btn-right'} size="large" expand="block">
-          <IonIcon slot="start" icon={user}/>
-                    Личный кабинет
+          <IonIcon slot="start" icon={user} />
+          Личный кабинет
         </IonButton>
       </div>
     </div>

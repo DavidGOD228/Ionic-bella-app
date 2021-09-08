@@ -23,6 +23,8 @@ module.exports = {
         expect: true,
         jsdom: true,
         JSX: true,
-    }
-
+    },
+    rules:{
+        "linebreak-style": 0
+    },
 };

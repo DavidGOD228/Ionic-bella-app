@@ -1,4 +1,4 @@
-.component {
+/* .component {
     align-items: center;
     color: #000;
 }
@@ -13,7 +13,55 @@
     margin: 74px 24px 0 24px;
 }
 
-.input-chekout {
+.chekout-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.chekout-input {
+    padding-left: 16px;
+    height: 54px;
+    background: #EDEDF066;
+    border: none;
+    outline: none;
+}
+
+.chekout-input:nth-child(2) {
+    margin-top: 8px;
+}
+
+.chekout-input-comment {
+    margin-top: 16px;
+    border: none;
+    outline: none;
+}
+
+.chekout-input-comment:hover {
+    background: #EDEDF066;
+    height: 100px;
+}
+
+.chekout-input-cheked {
+    margin-top: 64px;
+}
+
+.chekout-button {
+    color: white;
+    margin-top: 36px;
+    background: black;
+    height: 48px;
+    width: 100%;
+}
+
+.not-chekout-button {
+    background: #C1C1C4;
+    color: white;
+    margin-top: 36px;
+    height: 48px;
+    width: 100%;
+    margin-top: 36px;
+}
+/* .input-chekout {
     background: rgba(237, 237, 240, 0.4);
 }
 
@@ -43,9 +91,9 @@
     font-size: 16px;
     color: white;
     --background: black;
-}
+} */
 
 
 
 
-
+ */
