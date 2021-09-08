@@ -33,7 +33,7 @@
     "@types/redux-logger": "^3.0.9",
     "@types/redux-saga": "^0.10.5",
     "axios": "^0.21.1",
-    "eslint": "^5.16.0",
+    "eslint": "^7.32.0",
     "ionicons": "^5.4.0",
     "moment": "^2.29.1",
     "react": "^17.0.1",
