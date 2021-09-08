@@ -1,4 +1,4 @@
-import { IAffiliates, IService, ISpecialist } from '../interfaces/interfaces';
+import { IAffiliates, IService, ISpecialist, IVisits } from '../interfaces/interfaces';
 
 
 export enum actionTypes {
@@ -25,7 +25,12 @@ export enum actionTypes {
   SAVE_TIME = 'SAVE_TIME',
 
   DELETE_SERVICE = 'DELETE_SERVICE',
-  DELETE_DATE = 'DELETE_DATE'
+  DELETE_DATE = 'DELETE_DATE',
+
+
+  GET_VISITS_REQUEST = 'GET_VISITS_REQUEST',
+  GET_VISITS_SUCCESS = 'GET_VISITS_SUCCESS',
+  GET_VISITS_FAIL = 'GET_VISITS_FAIL'
 }
 
 export interface IGetAffiliatesRequest {
@@ -90,6 +95,19 @@ export interface IGetSpecialistsFail {
 export interface IGetSpecialistsSuccess {
   type: actionTypes.GET_SPECIALISTS_SUCCESS;
   data: Array<IAffiliates>;
+}
+
+export interface IGetVisitsRequest {
+  type: actionTypes.GET_VISITS_REQUEST;
+}
+
+export interface IGetVisitsSuccess {
+  type: actionTypes.GET_VISITS_SUCCESS;
+  visits: Array<IVisits>;
+}
+
+export interface IGetVisitsFail {
+  type: actionTypes.GET_VISITS_FAIL;
 }
 
 

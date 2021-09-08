@@ -10,6 +10,7 @@ import { UserRegistration } from '../pages/UserRegistration/UserRegistration';
 import { Checkout } from '../pages/Chekout/Chekout';
 import { Verification } from '../pages/Verification/Verification';
 import { User } from '../pages/User/User';
+import { Visits } from '../pages/Visits/Visits';
 
 export const Routers = () => {
   return (
@@ -23,6 +24,7 @@ export const Routers = () => {
       <Route exact path="/">
         <Redirect to="/home"/>
       </Route>
+      <Route path="/visits" component={Visits}/>
       <Route path="/services" component={SelectServices}/>
       <Route exact path="/visitDetail" component={VisitDetails}/>
       <Route exact path="/user" component={User}/>

@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import { affiliatesInfoReducer } from './affiliates/reducer';
-import { IAffiliates, ISpecialist, IService, IServiceCategory, IDates } from '../interfaces/interfaces';
+import { IAffiliates, ISpecialist, IService, IServiceCategory, IDates, IVisits } from '../interfaces/interfaces';
 import { specialistsInfoReducer } from './specialists/reducer';
 import { serviceReducer } from './services/reducer';
+import { userReducer } from './user/reducer';
 
 export interface IServiceState{
   loading: boolean;
@@ -18,11 +19,6 @@ interface IAffiliatesState {
   affiliates: Array<IAffiliates>;
 }
 
-export interface IRootReducer {
-  affiliatesList: IAffiliatesState;
-  specialistsList: ISpecialistsState;
-  service: IServiceState;
-}
 
 export interface ISpecialistsState {
   loading: boolean;
@@ -30,9 +26,22 @@ export interface ISpecialistsState {
   savedSpecialist: null | ISpecialist;
 }
 
+export interface IVisitsState {
+  loading: boolean;
+  visits: Array<IVisits>;
+}
+
+
+export interface IRootReducer {
+  affiliatesList: IAffiliatesState;
+  specialistsList: ISpecialistsState;
+  service: IServiceState;
+  user: IVisitsState;
+}
 export const rootReducer = combineReducers({
   affiliatesList: affiliatesInfoReducer,
   specialistsList: specialistsInfoReducer,
-  service: serviceReducer
+  service: serviceReducer,
+  user: userReducer
 });
 
