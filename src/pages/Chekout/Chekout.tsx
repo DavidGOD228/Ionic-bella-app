@@ -8,6 +8,7 @@ export const Checkout = (): JSX.Element => {
   const [phone, setPhone] = useState('');
   const [comment, setComment] = useState('');
   const [isChecked, setChecked] = useState(false);
+  const [isShowComment, setShowComment] = useState(false);
 
   const history = useHistory();
 
@@ -34,8 +35,14 @@ export const Checkout = (): JSX.Element => {
         <form className={'chekout-form'} >
           <input className={'chekout-input'} value={phone} onChange={(event) => setPhone(event.target.value)} type="text" placeholder="Номер телефона*" />
           <input className={'chekout-input'} value={name} onChange={(event) => setName(event.target.value)} type="text" placeholder="Имя*" />
-          <input className={'chekout-input-comment'} value={comment} onChange={(event) => setComment(event.target.value)} type="text" placeholder="+Добавить комментарий" />
-          <input className={'chekout-input-cheked'} defaultChecked={isChecked} onChange={() => setChecked(!isChecked)} type="checkbox"/>
+          <div className="checked-container">
+            <input className={'chekout-input-cheked'} defaultChecked={isChecked} onChange={() => setChecked(!isChecked)} type="checkbox"/>
+            <span>Я принимаю условия пользовательского соглашения.</span>
+          </div>
+          {!isShowComment &&  <span onClick={() => setShowComment(true)}>+Добавить комментарий</span>}
+          {isShowComment &&
+                <textarea className={'chekout-input-comment'} onChange={(event) => setComment(event.target.value)} name="" id="" placeholder={'Комментарий'} cols={30}></textarea>
+          }
         </form>
         <button className={isChecked ? 'chekout-button' : 'not-chekout-button'} onClick={() => onRegistration()} disabled={!isChecked}>Подтвердить</button>
       </div>

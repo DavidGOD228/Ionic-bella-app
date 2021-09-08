@@ -34,12 +34,20 @@
     margin-top: 16px;
     border: none;
     outline: none;
+    min-height: 100px;
+    background-color: #F7F7F8;
+    padding-top: 10px;
+    padding-left: 5px;
 }
 
-.chekout-input-comment:hover {
-    background: #EDEDF066;
-    height: 100px;
+
+.checked-container{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: #A7A7AB;
 }
+
 
 .chekout-input-cheked {
     margin-top: 64px;
