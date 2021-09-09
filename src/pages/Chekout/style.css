@@ -9,16 +9,16 @@
     background-color: #F5F5F7
 }
 
-.wrapper-chekout {
+.wrapper-checkout {
     margin: 74px 24px 0 24px;
 }
 
-.chekout-form {
+.checkout-form {
     display: flex;
     flex-direction: column;
 }
 
-.chekout-input {
+.checkout-input {
     padding-left: 16px;
     height: 54px;
     background: #EDEDF066;
@@ -26,12 +26,12 @@
     outline: none;
 }
 
-.chekout-input:nth-child(2) {
+.checkout-input:nth-child(2) {
     margin-top: 8px;
 }
 
-.chekout-input-comment {
-    margin-top: 16px;
+.checkout-input-comment {
+    margin-top: 8px;
     border: none;
     outline: none;
     min-height: 100px;
@@ -40,20 +40,59 @@
     padding-left: 5px;
 }
 
-
 .checked-container{
+    height: 30px;
+    margin-top: 64px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     font-size: 13px;
     color: #A7A7AB;
 }
 
+label .checkout-input-checked {
+    display: none; 
+  }
 
-.chekout-input-cheked {
-    margin-top: 64px;
+[type=checkbox]:checked + .checkout-input-checked-text:before {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: black;
+    content: '\2714';
+    position: absolute;
+    margin-top: -5px;
+    left: 25px;
+    color: white !important;
+  }
+
+.checkout-input-checked-text:before {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #F7F7F8;
+    content: '';
+    position: absolute;
+    margin-top: -5px;
+    left: 25px;
 }
 
-.chekout-button {
+.checkout-input-checked-text {
+    margin-left: 30px;
+    font-size: 13px;
+    color: #A7A7AB;
+}
+
+.checkout-input-comment-text {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #A7A7AB;
+}
+
+.checkout-button {
     color: white;
     margin-top: 36px;
     background: black;
@@ -61,7 +100,7 @@
     width: 100%;
 }
 
-.not-chekout-button {
+.not-checkout-button {
     background: #C1C1C4;
     color: white;
     margin-top: 36px;
@@ -69,37 +108,7 @@
     width: 100%;
     margin-top: 36px;
 }
-.input-chekout {
-    background: rgba(237, 237, 240, 0.4);
-}
 
-.checkbox-text {
-    color: rgb(167, 167, 171);
-}
-
-.footer-btn {
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 0;
-}
-
-.footer-item-btn-right {
-    height: 80px;
-    width: 55%;
-    font-size: 16px;
-    color: rgb(167, 167, 171);
-    --background: white;
-    --border-color: none !important;
-}
-
-.footer-item-btn-left {
-    height: 80px;
-    width: 45%;
-    font-size: 16px;
-    color: white;
-    --background: black;
-}
 
 
 
