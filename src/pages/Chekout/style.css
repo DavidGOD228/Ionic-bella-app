@@ -62,25 +62,22 @@ label .checkout-input-checked {
     background: black;
     content: '\2714';
     position: absolute;
-    margin-top: -5px;
     left: 25px;
     color: white !important;
   }
 
 .checkout-input-checked-text:before {
-    display: flex;
-    text-align: center;
     justify-content: center;
     width: 20px;
     height: 20px;
     background: #F7F7F8;
     content: '';
     position: absolute;
-    margin-top: -5px;
     left: 25px;
 }
 
 .checkout-input-checked-text {
+    height: 30px;
     margin-left: 30px;
     font-size: 13px;
     color: #A7A7AB;

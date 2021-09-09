@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PinCode } from '../../components/PinCode/PinCode';
 import './style.css';
 import { IonButtons, IonHeader, IonToolbar } from '@ionic/react';
@@ -13,6 +13,14 @@ export const Verification = (): JSX.Element => {
   const onSendPinCode = () => {
     setChecked(true);
   };
+
+  useEffect(() => {
+    if (pinCodeValue.length !== 4) {
+      setChecked(false);
+    } else {
+      setChecked(true);
+    }
+  }, [pinCodeValue, setPinCodeValue]);
 
   return (
     <div className={'component'}>

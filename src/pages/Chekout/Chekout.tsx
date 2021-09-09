@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
+import { formatPhoneNumber } from '../../helpers/functions';
 import './style.css';
 import { IonButtons, IonHeader, IonToolbar } from '@ionic/react';
 
@@ -16,9 +17,12 @@ export const Checkout = (): JSX.Element => {
     history.push('/verification');
   };
 
-  useEffect(() => {
-    console.log(phone, name, comment);
-  });
+  const handleInput = (e) => {
+    // this is where we'll call the phoneNumberFormatter function
+    const formattedPhoneNumber = formatPhoneNumber(e.target.value);
+    // we'll set the input value using our setInputValue
+    setPhone(formattedPhoneNumber);
+  };
 
   return (
     <div className={'component'}>
@@ -33,11 +37,11 @@ export const Checkout = (): JSX.Element => {
       </IonHeader>
       <div className={'wrapper-checkout'}>
         <form className={'checkout-form'} >
-          <input className={'checkout-input'} value={phone} onChange={(event) => setPhone(event.target.value)} type="text" placeholder="Номер телефона*" />
+          <input className={'checkout-input'} value={phone} onChange={(e) => handleInput(e)} type="text" placeholder="Номер телефона*" />
           <input className={'checkout-input'} value={name} onChange={(event) => setName(event.target.value)} type="text" placeholder="Имя*" />
           {!isShowComment && <span className={'checkout-input-comment-text'} onClick={() => setShowComment(true)}>+Добавить комментарий</span>}
           {isShowComment &&
-            <textarea className={'checkout-input-comment'} onChange={(event) => setComment(event.target.value)} name="" id="" placeholder={'Комментарий'} cols={30}></textarea>
+            <textarea className={'checkout-input-comment'} value={comment} onChange={(event) => setComment(event.target.value)} name="" id="" placeholder={'Комментарий'} cols={30}></textarea>
           }
           <label className={'checked-container'}>
             <input className={'checkout-input-checked'} defaultChecked={isChecked} onChange={() => setChecked(!isChecked)} type="checkbox" />
