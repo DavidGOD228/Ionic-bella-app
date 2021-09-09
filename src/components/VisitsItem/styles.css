@@ -1,0 +1,31 @@
+.visit-header{
+    background-color: #0D0D0D;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.visit-header-ico{
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+}
+.header-company-detail{
+    margin: 0 10px
+}
+.header-company-detail-name{
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    display: block;
+}
+.header-company-detail-address{
+    color: #ffffff;
+    opacity: 0.7;
+    font-size: 11px;
+    display: block;
+}
+.visit-master-wrapper{
+    color: #000000;
+}
